@@ -1,1 +1,1 @@
-Project Repo for starting with C
+Repo for first projects on C with ALX
