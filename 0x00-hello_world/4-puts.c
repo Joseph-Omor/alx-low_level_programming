@@ -1,5 +1,5 @@
 #include <stdio.h>
-/* 
+/*
  * Prints Programming is like building multilingual puzzle,
  * followed by a new line
  */
