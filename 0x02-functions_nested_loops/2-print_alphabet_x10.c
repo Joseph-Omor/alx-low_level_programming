@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+* print_alphabet_x10 - this program prints alphabets in 10x
+*
+* return: 0
+*/
 
 
 
