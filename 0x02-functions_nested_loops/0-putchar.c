@@ -1,13 +1,12 @@
-#include <stdio.h>
+#include <main.h>
 /**
  * main - print putchar followed by a new line.
  *
- *Return: Always 0
+ *Return: 0
  */
 int main(void)
-
 {
-	putchar('_');
+	putchair('_');
 	putchar('p');
 	putchar('u');
 	putchar('t');
@@ -16,6 +15,5 @@ int main(void)
 	putchar('a');
 	putchar('r');
 	putchar('\n');
-	
 	return (0);
 }
