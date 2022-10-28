@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * main - print putchar followed by a new line.
+ * main - print _putchar followed by a new line.
  *
  *Return: 0
  */
+<<<<<<< HEAD
 int main(void)
 {
 	_putchar('_');
@@ -15,5 +16,11 @@ int main(void)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
+=======
+int _putchar(char c)
+	int c
+{
+	_putchar("_putchar\n");
+>>>>>>> new project
 	return (0);
 }
