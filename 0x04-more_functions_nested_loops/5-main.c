@@ -1,10 +1,13 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * main - call function more_numbers 
  *
  * Return: Always 0.
  */
+
+void more_numbers(void);
+
 int main(void)
 {
     more_numbers();
