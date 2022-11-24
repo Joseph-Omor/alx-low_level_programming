@@ -3,16 +3,18 @@
 
 /**
  * init_dog - function to initialize struct dog variable
- * @d: local variable
- * @name: received argument
- * @age: received argument
- * @owner: received argument
- *
+ * @d: struct dog
+ * @name: string for name
+ * @age: integer for age
+ * @owner: string for owners name
  */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	if (d != NULL)
+	{
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
+	}
 }
