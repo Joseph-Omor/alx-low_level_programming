@@ -2,23 +2,25 @@
 /**
  * print_square -  print squares
  * @size: size of square
- * Description: can only use _putchar to print
+ * Description: can only use _putchar to print. Use # to print square
  */
 void print_square(int size)
 {
 	int i, j;
 
-	if (size == 0)
+	j = 0;
+	if (size < 1)
 		_putchar('\n');
-	else
+
+	while (j < size)
 	{
-		for (i = 0; i < size; i++)
+		i = 0;
+		while (i < size)
 		{
-			for (j = 0; j < size; j++)
-			{
 			_putchar('#');
-			}
-			_putchar('\n');
+			i++;
 		}
+		_putchar('\n');
+		j++;
 	}
 }
