@@ -23,7 +23,12 @@ int main(void)
 		else if (i % T == 0)
 			printf("Fizz ");
 		else if (i % F == 0)
-			printf("Buzz ");
+		{
+			if (i == n)
+				printf("Buzz");
+			else
+				printf("Buzz ");
+		}
 		else
 			printf("%d ", i);
 	}
