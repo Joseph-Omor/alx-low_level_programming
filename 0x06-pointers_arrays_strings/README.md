@@ -1,1 +1,6 @@
-C - More pointers, arrays and strings
+More pointers, strings and arrays
+
+==> Task 2. _strncpy
+It was important to take note of buffer overflow
+* This prompted the use of j to subscript dest to paste copied characters at element 0 as required.
+* The function is similar to strncat, except the need for subscipting to paste at desired location.
