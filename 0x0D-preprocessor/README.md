@@ -1,1 +1,1 @@
-Project 0x0D. C - Preprocessor
+Directory for tasks on C - Preprocessing and Macros
