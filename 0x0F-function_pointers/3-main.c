@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 	int (*operator)(int, int);
-	int num1, num2, num3, result;
+	int num1, num3, result;
 
 	if (argc > 5 || argc < 2)
 	{
@@ -25,17 +25,9 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(99);
 	}
-	num2 = atoi(argv[2]);
 	num1 = atoi(argv[1]);
 	num3 = atoi(argv[3]);
 
-	/* Code meant to chck for / or % by 0 */
-	/* not working */
-	if ((num2 == 47 || num2 == 37) && num3 == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
 
 	result = operator(num1, num3);
 

@@ -1,7 +1,7 @@
 #include "3-calc.h"
 
 /**
- * get_op_func - compares operator
+ * get_op_func - compares string with options to choose appropriate function
  * @s: inputed string to use as operator
  * @ops = array of struct op_t
  *
