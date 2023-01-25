@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	int (*operator)(int, int);
 	int num1, num3, result;
 
-	if (argc > 5 || argc < 2)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
