@@ -1,1 +1,1 @@
-Repo for first projects on C with ALX
+Repository for ALX SE project tasks on Low Level Programming using C programming language.
