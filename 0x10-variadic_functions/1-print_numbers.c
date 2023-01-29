@@ -12,18 +12,29 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 	unsigned int i;
 	int value;
 
-	if (seperator == 0 || n == 0)
+	if (n == 0)
 		return;
 
 	va_start(ab, n);
-
-	for (i = 0; i < n; i++)
+	if (seperator == NULL)
 	{
-		value = va_arg(ab, int);
-		if (i == n - 1)
-			printf("%d", value);
-		else
-			printf("%d%s", value, seperator);
+		for (i = 0; i < n; i++)
+			{
+				value = va_arg(ab, int);
+				printf("%d", value);
+			}
+
+	}
+	else
+	{
+		for (i = 0; i < n; i++)
+			{
+				value = va_arg(ab, int);
+				if (i == n - 1)
+					printf("%d", value);
+				else
+					printf("%d%s", value, seperator);
+			}
 	}
 	printf("\n");
 	va_end(ab);
