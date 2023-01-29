@@ -16,6 +16,8 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 		return;
 
 	va_start(ab, n);
+	/* my attempt to check seperator for NULL prompted the need for nested
+	 * if and duplicate code - Checker failed - Find alternative */
 	if (seperator == NULL)
 	{
 		for (i = 0; i < n; i++)
