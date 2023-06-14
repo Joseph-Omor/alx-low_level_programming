@@ -12,13 +12,15 @@
 char *_strdup(char *str)
 {
 	char *sptr;
+	int lenght;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-
-	sptr = malloc(sizeof(char));
+	
+	lenght = strlen(str);
+	sptr = malloc(sizeof(lenght + 1));
 
 	if (!sptr)
 	{
