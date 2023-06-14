@@ -11,7 +11,7 @@
 
 char *_strdup(char *str)
 {
-	char *sptr;
+	char *duplicate;
 	int lenght;
 
 	if (str == NULL)
@@ -19,15 +19,15 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	
-	lenght = strlen(str);
-	sptr = malloc(sizeof(lenght + 1));
+	lenght = strlen(str) + 1;
+	duplicate = malloc(sizeof(char) * lenght);
 
-	if (!sptr)
+	if (!duplicate)
 	{
 		return (NULL);
 	}
 
-	strcpy(sptr, str);
+	strcpy(duplicate, str);
 
-	return (sptr);
+	return (duplicate);
 }
