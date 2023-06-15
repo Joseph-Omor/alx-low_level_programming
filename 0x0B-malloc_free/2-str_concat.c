@@ -41,11 +41,11 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 		*result = '\0';
-	
+
 	if (s2 != NULL)
 	{
 		strcat(result, s2);
 	}
-	
+
 	return (result);
 }
