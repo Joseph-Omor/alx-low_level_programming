@@ -3,7 +3,8 @@
 #include "main.h"
 
 /**
- *  str_concat - function returns a pointer to a new string copy of string
+ *  str_concat - function returns a pointer to a new string
+ *  with concatenated copy of passed strings
  * @s1: string
  * @s2: string
  *
@@ -20,12 +21,12 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 	{
-		return (s1);
+		return (s2);
 	}
 
 	if (s2 == NULL)
 	{
-		return (s2);
+		return (s1);
 	}
 
 	len1 = strlen(s1);
@@ -43,7 +44,7 @@ char *str_concat(char *s1, char *s2)
 	strcpy(result, s1);
 	strcat(result, s2);
 
-	result[total_len] = '\0';
+	result[total_len - 1] = '\0';
 
 	return (result);
 }
