@@ -16,35 +16,36 @@ char *str_concat(char *s1, char *s2)
 {
 	int len1;
 	int len2;
-	int total_len;
 	char *result;
 
-	if (s1 == NULL)
+	if (s1 != NULL)
 	{
-		return (s2);
+		len1 = strlen(s1);
 	}
 
-	if (s2 == NULL)
+	if (s2 != NULL)
 	{
-		return (s1);
+		len2 = strlen(s2);
 	}
 
-	len1 = strlen(s1);
-	len2 = strlen(s2);
-
-	total_len = len1 + len2 + 1;
-
-	result = malloc(total_len);
+	result = malloc(len1 + len2 + 1);
 
 	if (result == NULL)
 	{
 		return (NULL);
 	}
 
-	strcpy(result, s1);
-	strcat(result, s2);
-
-	result[total_len - 1] = '\0';
-
+	if (s1 != NULL)
+	{
+		strcpy(result, s1);
+	}
+	else
+		*result = '\0';
+	
+	if (s2 != NULL)
+	{
+		strcat(result, s2);
+	}
+	
 	return (result);
 }
