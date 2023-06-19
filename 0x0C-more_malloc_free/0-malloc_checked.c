@@ -10,11 +10,11 @@
  * Return: pointer to allocated memory, 98 if unsuccessful.
  */
 
-void *malloc_checked(__attribute__((unused))unsigned int b)
+void *malloc_checked(unsigned int b)
 {
 	char *ptr;
 
-	ptr = malloc(sizeof(*ptr));
+	ptr = malloc(b * sizeof(ptr));
 
 	if (ptr == NULL)
 	{
