@@ -11,7 +11,8 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i, stat;
+	int i;
+	unsigned int stat;
 
 	if (size <= 0)
 	{
