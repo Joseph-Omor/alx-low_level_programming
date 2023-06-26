@@ -5,21 +5,21 @@
 
 /**
  * malloc_checked - allocates memory
- * @b: unused variable
+ * @b: variable used for malloc size
  *
  * Return: pointer to allocated memory, 98 if unsuccessful.
  */
 
 void *malloc_checked(unsigned int b)
 {
-	char *ptr;
+	void *ptr = NULL;
 
-	ptr = malloc(sizeof(char *) * b);
+	ptr = malloc(sizeof(ptr) * b);
 
 	if (ptr == NULL)
 	{
 		exit(98);
 	}
-
+	
 	return (ptr);
 }
