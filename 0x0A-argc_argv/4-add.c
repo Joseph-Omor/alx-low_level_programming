@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - program adds two positive numbers
@@ -11,33 +12,32 @@
 
 int main(int argc, char *argv[])
 {
-	int i, result = 0, value = 0;
+	int i, j, sum = 0, value = 0;
 
 	if (argc <= 1)
 	{
 		printf("0\n");
-		exit(1);
+		return (0);
 	}
 
 	for (i = 1; i < argc; i++)
 	{
+		/* check if argument contains non-digit characters */
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (!isdigit(argv[i][j]))
+			{
+				/* If non-digit characters found */
+				printf("Error\n");
+				return (1);
+			}
+		}
+
 		value = atoi(argv[i]);
 
-		/**
-		 * atoi returns 0 on error, also check that returned 0 isn't numeric
-		 * representation of '0'
-		 */
-		if (value == 0 && argv[i][0] != '0')
-		{
-			printf("Error\n");
-			exit(1);
-		}
-		else
-		{
-			result += value;
-		}
+		sum += value;
 	}
-	printf("%d\n", result);
+	printf("%d\n", sum);
 
 	return (0);
 
