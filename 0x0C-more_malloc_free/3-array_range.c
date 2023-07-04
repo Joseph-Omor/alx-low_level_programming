@@ -7,12 +7,16 @@
  * @min: The minimum value.
  * @max: The maximum value.
  *
+ * Description: It creates an array of integers containing all values from
+ * 'min' to 'max', ordered from smallest to largest.
+ *
  * Return: The pointer to the newly created array, or NULL if unsuccessful.
  */
 int *array_range(int min, int max)
 {
 	int *arr, size, i;
 
+	/* To indicate invalid range */
 	if (min > max)
 	{
 		return (NULL);
