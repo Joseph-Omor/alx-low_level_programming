@@ -8,16 +8,33 @@
  * @age: struct member age
  * @owner: struct member owner
  *
+ * Return: None.
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (d == NULL || name == NULL || owner == NULL)
+	if (d == NULL)
 	{
-		exit(1);
+		return;
 	}
 
-	d->name = name;
+	if (name == NULL)
+	{
+		return;
+	}
+	else
+	{
+		d->name = name;
+	}
+
+	if (owner == NULL)
+	{
+		return;
+	}
+	else
+	{
+		d->owner = owner;
+	}
+
 	d->age = age;
-	d->owner = owner;
 }
 
