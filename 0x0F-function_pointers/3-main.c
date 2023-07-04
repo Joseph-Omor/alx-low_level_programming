@@ -33,10 +33,17 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
+	/* check value of argument arrays and handle appropraitely */
 	if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
+	}
+
+	if ((argv[2][0] == '*' && argv[2][1]))
+	{
+		printf("Error\n");
+		exit(99);
 	}
 
 	result = op_func(num1, num2);
