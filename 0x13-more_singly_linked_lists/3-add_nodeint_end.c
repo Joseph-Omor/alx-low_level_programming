@@ -10,7 +10,6 @@
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new_node;
 	listint_t *temp;
 
 	if (head == NULL)
@@ -18,22 +17,17 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (NULL);
 	}
 
-	new_node = malloc(sizeof(listint_t));
 
-	if (new_node == NULL)
-	{
-		free(new_node);
-		return (NULL);
-	}
-
-	new_node->n = n;
-	new_node->next = NULL;
-
-	/* handles for when there's no node in list asides NULL */	
 	if (*head == NULL)
 	{
-		*head = new_node;
-		return (new_node);
+		*head = malloc(sizeof(listint_t));
+		if (*head == NULL)
+		{
+			return (NULL);
+		}
+		(*head)->n = n;
+		(*head)->next = NULL;
+		return (*head);
 	}
 
 	temp = *head;
@@ -42,6 +36,14 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		temp = temp->next;
 	}
 
-	temp->next = new_node;
-	return (new_node);
+	temp->next = malloc(sizeof(listint_t));
+	if (temp->next == NULL)
+	{
+		return (NULL);
+	}
+
+	temp->next->n = n;
+	temp->next->next = NULL;
+
+	return (temp->next);
 }
