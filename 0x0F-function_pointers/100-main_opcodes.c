@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	if (numBytes < 0)
 	{
 		printf("Error\n");
-		return (1);
+		return (2);
 	}
 
 	/* Call the function to print the opcodes */
