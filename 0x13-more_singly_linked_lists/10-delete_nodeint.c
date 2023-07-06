@@ -39,7 +39,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		index--;
 	}
 
-	/* handles if traversal reached desired position */
+	/* checks if the traversal reached desired position */
 	if (current == NULL || current->next == NULL)
 	{
 		return (-1);
@@ -52,5 +52,5 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	free(temp);
 
-	return (-1);
+	return (1);
 }
