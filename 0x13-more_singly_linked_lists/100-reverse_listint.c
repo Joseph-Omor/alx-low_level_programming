@@ -10,8 +10,14 @@
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *prev = NULL;
-	listint_t *next_node;
 	listint_t *current = *head;
+	listint_t *next_node = NULL;
+
+	/* check for empty list */
+	if (current == NULL || current->next == NULL)
+	{
+		return (current);
+	}
 
 	while (current != NULL)
 	{
