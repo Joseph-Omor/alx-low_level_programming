@@ -11,30 +11,35 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *current;
-	size_t count = 0;
+	size_t count;
 
+	count = 0;
 	current = head;
+
+	/* Check if list is empty */
+	if (head == NULL)
+	{
+		return (0);
+	}
+
 
 	while (current != NULL)
 	{
+		/* Print the node address and value */
 		printf("[%p] %d\n", (void *)current, current->n);
 		count++;
 
-		/* Check if the current node points to a previous node */
 		if (current->next >= current)
 		{
+			/**
+			 * If loop encountered, print the loop starting node
+			 * and exit
+			 */
 			printf("-> [%p] %d\n", (void *)current->next, current->next->n);
-			break;
+			exit(98);
 		}
 
-		/* Move to the next node */
 		current = current->next;
-	}
-
-	/* Handle the case of a loop in the list */
-	if (current != NULL)
-	{
-		exit(98);
 	}
 
 	return (count);
