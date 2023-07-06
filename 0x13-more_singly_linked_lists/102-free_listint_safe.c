@@ -20,10 +20,16 @@ size_t free_listint_safe(listint_t **h)
 	{
 		/* store the next node in the 'next' pointer */
 		next = current->next;
-		/* deallocate the memory occupied by the current node */
-		free(current);
 		/* increment variable to keep track of the number of nodes */
 		size++;
+		
+		if (next >= current)
+		{
+			break;
+		}
+		/* deallocate the memory occupied by the current node */
+		free(current);
+
 		/* move current pointer to next node to continue traversal */
 		current = next;
 	}
