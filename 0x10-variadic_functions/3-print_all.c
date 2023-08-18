@@ -22,24 +22,29 @@ void print_all(const char *const format, ...)
 	va_start(args, format);
 	first = 1;
 
+	/* Loop through each character in the format string */	
 	for (i = 0; format[i]; i++)
 	{
 		c = format[i];
 
 		if (!first)
 		{
+			/* Print separator if not the first value */
 			printf(", ");
 		}
 
+		/* Find the corresponding processing function for the format character */
 		for (j = 0; formatPrinters[j].format; j++)
 		{
 			if (formatPrinters[j].format == c)
 			{
+				/* Call the processing function */
 				formatPrinters[j].printer(args);
 				break;
 			}
 		}
 
+		/* Set first to 0 after the first value has been printed */
 		first = 0;
 	}
 	printf("\n");
