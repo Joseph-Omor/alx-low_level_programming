@@ -15,15 +15,13 @@ size_t print_list(const list_t *h)
 		if (h->str == NULL) /* Check if the current node's string is NULL */
 		{
 			printf("[0] (nil)\n");
-		}		
+		}
 		else
 		{
 			printf("[%d] %s\n", h->len, h->str);
-		}		
-
-		count ++;
+		}
+		count++;
 		h = h->next;
 	}
-	
 	return (count); /* Return the total number of nodes printed */
 }
