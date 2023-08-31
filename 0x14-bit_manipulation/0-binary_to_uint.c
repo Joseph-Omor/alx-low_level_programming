@@ -22,6 +22,10 @@ unsigned int binary_to_uint(const char *b)
 		digit = *b;
 		if (digit == '0' || digit == '1')
 		{
+			/**
+			 * Shift current value left by 1 bit and,
+			 * add the value of the character minus '0'
+			 */
 			result = (result << 1) + (digit - '0');
 		}
 		else
