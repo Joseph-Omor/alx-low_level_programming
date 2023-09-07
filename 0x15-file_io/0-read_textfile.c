@@ -30,24 +30,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL) /* if memory allocation fails */
 	{
+		fclose(fp);
 		return (0);
 	}
-
 	/* using fread, copy content in file into buffer */
 	read_count = fread(buffer, sizeof(char), letters, fp);
-
 	/* close the file */
 	fclose(fp);
-
 	if (read_count == 0)
 	{
+		free(buffer);
 		return (0);
 	}
 
 	/* write the contents in buffer to stdout */
 	fwrite(buffer, sizeof(char), read_count, stdout);
-
 	free(buffer);
 	return (read_count);
 }
-
