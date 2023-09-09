@@ -9,7 +9,7 @@
  */
 int main(int argc, char **argv)
 {
-	FILE *file_to, *file_from;
+	FILE *file_to = NULL, *file_from = NULL;
 	int c1, c2, bytes_read, bytes_written;
 	char *message, *buffer;
 
@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 	buffer = (char *)malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
+		fclose(file_from);
 		exit(EXIT_FAILURE);
 	}
 
@@ -41,6 +42,8 @@ int main(int argc, char **argv)
 	{
 		message = "Error: Can't write to";
 		dprintf(2, "%s %s\n", message, argv[2]);
+		free(buffer);
+		fclose(file_from);
 		exit(99);
 	}
 
@@ -56,6 +59,8 @@ int main(int argc, char **argv)
 			message = "Error: Can't write to";
 			dprintf(2, "%s %s\n", message, argv[2]);
 			free(buffer);
+			fclose(file_from);
+			fclose(file_to);
 			exit(99);
 		}
 	}
