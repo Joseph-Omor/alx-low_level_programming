@@ -12,6 +12,7 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b == NULL)
 	{
+		/* Checks is string is NULL */
 		return (0);
 	}
 
@@ -19,17 +20,20 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (*b == '0')
 		{
+			/* Shift the current result to the left (multipy by 2) & adds 0 */
 			result = result << 1;
 		}
 		else if (*b == '1')
 		{
+			/* Shift the current result to the left & adds 1 */
 			result = (result << 1) | 1;
 		}
 		else
 		{
+			/* Invalid character found, return 0 */
 			return (0);
 		}
-		b++;
+		b++; /* Move to the next character in the string */
 	}
 	return (result);
 }
